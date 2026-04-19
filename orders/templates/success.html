@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Success - Munric CyberHub</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f9;
+            margin:0;
+        }
+
+        .container{
+            max-width:700px;
+            margin:50px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header{
+            text-align:center;
+            color:green;
+        }
+
+        .subtext{
+            text-align:center;
+            color:#555;
+        }
+
+        .section-title{
+            color:#0a2a66;
+        }
+
+        .status{
+            padding:6px 12px;
+            border-radius:5px;
+            color:white;
+            font-weight:bold;
+            display:inline-block;
+        }
+
+        .pending{ background:orange; }
+        .paid{ background:green; }
+        .completed{ background:blue; }
+
+        .btn{
+            padding:10px 20px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            text-decoration:none;
+            color:white;
+        }
+
+        .btn-print{
+            background:#0a2a66;
+        }
+
+        .btn-back{
+            background:#555;
+        }
+
+        .buttons{
+            text-align:center;
+            margin-top:25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2 class="header">✅ Order Placed Successfully</h2>
+
+    <p class="subtext">
+        Thank you for choosing Munric CyberHub
+    </p>
+
+    <hr>
+
+    <h3 class="section-title">🧾 Order Details</h3>
+
+    <!-- Replace these manually or via backend later -->
+    <p><strong>Service:</strong> Printing</p>
+    <p><strong>Price:</strong> Ksh 10</p>
+    <p><strong>Name:</strong> John Doe</p>
+    <p><strong>Phone:</strong> 0712345678</p>
+    <p><strong>Details:</strong> 5 pages black & white</p>
+    <p><strong>M-Pesa Code:</strong> QGH123XYZ</p>
+
+    <!-- Change class: pending / paid / completed -->
+    <p>
+        <strong>Status:</strong> 
+        <span class="status pending">Pending</span>
+    </p>
+
+    <hr>
+
+    <div class="buttons">
+
+        <button onclick="window.print()" class="btn btn-print">
+            🖨 Print Receipt
+        </button>
+
+        <a href="/services/" class="btn btn-back">
+            Back to Services
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

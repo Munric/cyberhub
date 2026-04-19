@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="
+    max-width:600px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+">
+
+    <!-- Title -->
+    <h2 style="text-align:center; color:#0a2a66;">
+        Order Service
+    </h2>
+
+    <p style="text-align:center; margin-bottom:20px;">
+        You are ordering: 
+        <strong>{{ service.name }}</strong>
+    </p>
+
+    <!-- Service Price -->
+    <div style="
+        background:#f4f6f9;
+        padding:15px;
+        border-radius:8px;
+        margin-bottom:20px;
+        text-align:center;
+    ">
+        <p><strong>Price:</strong> Ksh {{ service.price }}</p>
+    </div>
+
+    <!-- Payment Instructions -->
+    <div style="
+        background:#e8f5e9;
+        padding:15px;
+        border-radius:8px;
+        margin-bottom:20px;
+    ">
+        <p><strong>📱 Pay via M-Pesa</strong></p>
+        <p>Paybill: <strong>123456</strong></p>
+        <p>Account: <strong>Your Phone Number</strong></p>
+        <p style="color:#555;">Enter M-Pesa code after payment</p>
+    </div>
+
+    <!-- Form -->
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Full Name</label>
+        <input type="text" name="customer_name" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+
+        <label>Phone Number</label>
+        <input type="text" name="phone" placeholder="07XXXXXXXX" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+
+        <label>Additional Details</label>
+        <textarea name="details" rows="3" style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;"></textarea>
+
+        <label>M-Pesa Transaction Code</label>
+        <input type="text" name="mpesa_code" placeholder="e.g QGH123XYZ" style="width:100%; padding:10px; margin-bottom:20px; border-radius:5px; border:1px solid #ccc;">
+
+        <!-- Submit Button -->
+        <button type="submit" style="
+            width:100%;
+            background:#0a2a66;
+            color:white;
+            padding:12px;
+            border:none;
+            border-radius:5px;
+            font-size:16px;
+            cursor:pointer;
+        ">
+            Submit Order
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
